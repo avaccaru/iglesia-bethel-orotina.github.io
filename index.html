@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Iglesia Bethel Orotina</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/logo-blanco.png">
+</head>
+<body>
+    <header class="header">
+    <a href="#inicio"><img id="" class="logo" src="assets/img/logo-blanco.png" alt="Logo oficial de iglesia Bethel"></a>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#ministerios">Ministerios</a></li>
+                <li><a href="#servicios">Servicios Semanales</a></li>
+                <li><a href="#ofrendas">Ofrendas</a></li>
+                <li><a href="#contactanos">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section class="banner" id="inicio">
+            <h1 class="queremos">Una comunidad que ama, sirve y adora</h1>
+            <i class="slogan">"Fundamentados en la Palabra, guiados por el Espíritu."</i>
+            <a
+                href="https://api.whatsapp.com/send?phone=50689878331&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20la%20Iglesia%20Bethel%20Orotina%3A%20ubicaci%C3%B3n%20y%20horarios%20de%20servicios%2C%20por%20favor." 
+                target="_blank" 
+                class="cta-btn">
+                Habla con nosotros
+            </a>
+        </section>
+    <section class="ministerios" id="ministerios">
+            <h2>Ministerios</h2>
+            <p class="ministerios-intro">En Bethel Orotina creemos que cada área de la iglesia es una oportunidad para servir y crecer en comunidad. 
+    Nuestros ministerios buscan fortalecer la fe, los valores cristianos y la comunión con Dios, 
+    equipando a cada persona para vivir conforme a Su propósito.</p>
+
+            <div class="ministerios-contenedor">
+
+                <div class="ministerios-card">
+                    <img src="assets/img/alabanza.jpg" alt="Cambio de cuerdas de guitarra">
+                    <h3>Alabanza y Adoración</h3>
+                    <p>A través de la música y la adoración buscamos crear un ambiente donde la presencia de Dios se manifieste. 
+  Nuestro deseo es guiar a la congregación a una relación más profunda con el Señor, 
+  levantando manos y corazones en gratitud y entrega total.</p>
+                </div>
+                <div class="ministerios-card">
+                    <img src="assets/img/hombres.jpg" alt="Revisión electrónica de guitarra">
+                    <h3>Hombres</h3>
+                    <p>Este ministerio está enfocado en formar hombres conforme al corazón de Dios. 
+  Fomentamos el crecimiento espiritual, el liderazgo familiar y el compañerismo cristiano, 
+  animando a cada hombre a ser ejemplo de fe, integridad y servicio en su hogar y comunidad.</p>
+                </div>
+                <div class="ministerios-card">
+                    <img src="assets/img/mujeres.jpg" alt="Ajuste de mástil de guitarra">
+                    <h3>Mujeres</h3>
+                    <p>Un espacio diseñado para mujeres que buscan fortalecer su fe y propósito. 
+  A través de estudios bíblicos, tiempos de oración y compañerismo, 
+  animamos a cada mujer a vivir con identidad en Cristo, reflejando Su amor en cada área de su vida.</p>
+                </div>
+                <div class="ministerios-card">
+                    <img src="assets/img/jovenes.jpg" alt="Restauración del acabado de guitarra">
+                    <h3>Jóvenes</h3>
+                    <p>Un ministerio vibrante donde los jóvenes pueden crecer en su relación con Dios, 
+  descubrir sus dones y aprender a impactar su entorno con fe y esperanza. 
+  Promovemos la unidad, el servicio y la pasión por Jesús como estilo de vida.</p>
+                </div>
+            </div>
+        </section>
+    <section class="banner2" id="servicios">
+            <h2 class="iglesia">Iglesia Bíblica Bethel Orotina</h2>
+            <p class="asiste">Asiste a nuestros servicios semanales</p>
+            <p class="dia">Jueves de oración - 7 PM</p>
+            <p class="dia">Martes de oración - 9 AM</p>
+            <p class="dia">Domingo de Palabra - 9:30 AM</p>
+            <h2 class="hora">¡Te esperamos con los brazo abiertos!</h2>
+        </section>
+    <section class="ofrendas" id="ofrendas">
+            <h2 class="ofrenda-texto">OFRENDAS</h2>
+            <p class="dona">Doná por medio de sinpe móvil: +506 6479 4381</p>
+
+        </section>
+    <footer class="site-footer" id="contactanos">
+            <div class="footer-content">
+            <p class="conecta">CONECTA CON NOSOTROS</p>
+            <a href="https://api.whatsapp.com/send?phone=50689878331&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20la%20Iglesia%20Bethel%20Orotina%3A%20ubicaci%C3%B3n%20y%20horarios%20de%20servicios%2C%20por%20favor." class="numero"><p>WhatsApp de Información +506 8461 8461</p></a>
+            <a href="https://api.whatsapp.com/send?phone=50689878331&text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20la%20Iglesia%20Bethel%20Orotina%3A%20ubicaci%C3%B3n%20y%20horarios%20de%20servicios%2C%20por%20favor." class="numero"><p>WhatsApp de Oración +506 8461 8461</p></a>
+             <p class="credits">Iglesia Bethel Orotina © 2025</p>
+            </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.getElementById("menu-toggle");
+            const navLinks = document.querySelectorAll(".nav-list a");
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    if (menuToggle.checked) {
+                        menuToggle.checked = false; // 🔹 Cierra el menú automáticamente
+                    }
+                });
+            });
+        });
+    </script>
+    </main>
+</body>
+</html>

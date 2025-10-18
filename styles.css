@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.header {
+    padding: 0 30px;
+    position: fixed; /* ✅ así se mantiene visible al hacer scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: ; /* o puedes poner un fondo si prefieres */
+    z-index: 10; /* ✅ asegura que quede por encima del banner */
+}
+
+.logo {
+    width: 110px;
+    height: auto;
+    position: relative;
+}
+
+/* ===========================
+   🔹 MENÚ HAMBURGUESA ANIMADO
+   =========================== */
+
+#menu-toggle {
+  display: none;
+}
+
+/* --- Estilo base del icono --- */
+.menu-icon {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  display: none;
+  cursor: pointer;
+  margin-right: 25px;
+  z-index: 101;
+  font-size: 0;
+}
+
+/* Líneas del icono */
+.menu-icon span,
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: #FFF8E1;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.menu-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-icon::before {
+  top: 0;
+}
+
+.menu-icon::after {
+  bottom: 0;
+}
+
+/* --- Efecto al abrir el menú (transformación a "X") --- */
+#menu-toggle:checked + .menu-icon::before {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+#menu-toggle:checked + .menu-icon::after {
+  transform: rotate(-45deg);
+  bottom: 10px;
+}
+
+#menu-toggle:checked + .menu-icon span {
+  opacity: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: right 0.3s ease-in-out;
+    z-index: 100;
+  }
+
+  /* Menú visible al hacer click */
+  #menu-toggle:checked + .menu-icon + .main-nav {
+    right: 0;
+  }
+
+  /* Estilo vertical de los enlaces */
+  .main-nav ul {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-nav li {
+    margin: 0;
+  }
+
+  .main-nav a {
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+
+.main-nav {
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+}
+
+.main-nav li a {
+    padding: 25px;
+    font-size: 1.1rem;
+    color: rgb(247, 243, 243);
+    text-decoration: none;
+    padding-bottom: 7px;
+    border-bottom: 3px solid transparent;
+}
+.main-nav a:hover {
+    border-color: rgb(117, 115, 115);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.banner {
+  position: relative;
+  background-image: url(assets/img/fondo\ def.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* 🔥 Capa de opacidad (overlay oscuro) */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* ajusta el nivel de oscuridad */
+  z-index: 1;
+}
+
+/* 🔤 Contenido por encima del overlay */
+.banner * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.queremos {
+    margin: 0 100px;
+    font-size: 60px;
+    display: flex;
+    text-align: center;
+}
+
+.slogan {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.cta-btn {
+    margin-bottom: 30px;
+    display: inline-block;
+    background-color: black;
+    color: #FFF8E1;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 1000;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: rgb(68, 67, 67);
+    transform: scale(1.05);
+}
+
+.ministerios {
+    padding: 80px 20px;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+}
+
+.ministerios h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.ministerios-intro {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 50px;
+    padding: 0 75px;
+}
+
+.ministerios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ministerios-card {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ministerios-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(250, 250, 250, 0.876);
+}
+
+.ministerios-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.ministerios-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.ministerios-card h3 {
+    margin-bottom: 10px;
+}
+
+.banner2 {
+    position: relative;
+    background-image: url(assets/img/estudio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* 🔥 Capa de opacidad (overlay oscuro) */
+.banner2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* ajusta el nivel de oscuridad */
+    z-index: 1;
+}
+
+/* 🔤 Contenido por encima del overlay */
+.banner2 * {
+    position: relative;
+    z-index: 2;
+    padding: 50px 0;
+}
+
+.iglesia {
+    font-size: 4rem;
+}
+
+.asiste {
+    font-size: 2rem;
+    padding: 0 25px;
+    margin-bottom: 20px;
+}
+
+.dia {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.ofrendas {
+    background-color: #1f1f1f;
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.ofrenda-texto {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.dona {
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+
+.site-footer {
+  padding: 12px;
+  background-color: black;
+  color: #f3f4f6;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.site-footer p {
+  margin: 0.5rem 0;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: grey;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: darkgray;
+}
+
+.credits {
+  padding: 15px;
+  font-size: 0.900rem;
+  color: #9ca3af;
+}
+
+.conecta {
+  padding-bottom: 20px;
+}
+
+.whatsapp-logo {
+    padding: 12px;
+    width: 5px;
+    height: 5px;  
+}
+
+.numero {
+    text-decoration: none;
+    color: #838464;
+}
+
+/* ==========================
+   Smooth scroll y offset
+   ========================== */
+:root {
+  --header-offset: 80px; /* ajusta si tu header cambia de altura */
+}
+
+html {
+  scroll-behavior: smooth; /* animación suave al saltar por anchors */
+  /* scroll-padding-top ayuda en navegadores que lo soportan */
+  scroll-padding-top: var(--header-offset);
+}
+
+/* Evita que el header fijo tape las secciones al hacer anchor click */
+.banner,
+.ministerios,
+.banner2,
+.ofrendas,
+.site-footer {
+  scroll-margin-top: var(--header-offset);
+}
